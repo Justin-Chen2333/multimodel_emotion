@@ -1,0 +1,47 @@
+{
+  "labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "label2id": {
+    "anger": 0,
+    "disgust": 1,
+    "fear": 2,
+    "joy": 3,
+    "neutral": 4,
+    "sadness": 5,
+    "surprise": 6
+  },
+  "train_counts": [
+    1109,
+    271,
+    268,
+    1743,
+    4710,
+    683,
+    1205
+  ],
+  "class_weights_balanced": [
+    1.2867,
+    5.2657,
+    5.3246,
+    0.8187,
+    0.303,
+    2.0893,
+    1.1842
+  ],
+  "model": "roberta-base",
+  "token_len_percentiles": {
+    "50": 11,
+    "90": 25,
+    "95": 29,
+    "99": 37
+  },
+  "token_len_max": 92,
+  "max_length": 128
+}
