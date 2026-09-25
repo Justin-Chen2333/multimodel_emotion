@@ -1,0 +1,2 @@
+﻿file,emotion,speaker,duration_s,ref,hyp,ref_norm,hyp_norm,wer,secs
+dia0_utt0.wav,neutral,Chandler,5.67,also I was the point person on my company's transition from the KL-5 to GR-6 system.,"Also, I was the point person on my company's transition from the KL5 to GR6 systems.",also i was the point person on my company is transition from the kl 5 to gr 6 system,also i was the point person on my company is transition from the kl 5 to gr 6 systems,0.053,1.04
