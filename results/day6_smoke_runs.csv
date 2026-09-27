@@ -1,0 +1,2 @@
+weights,seed,best_epoch,dev_acc,dev_wf1,dev_mf1,f1_anger,f1_disgust,f1_fear,f1_joy,f1_neutral,f1_sadness,f1_surprise
+none,42,5,0.4688,0.3811,0.2331,0.2278,0.0,0.0,0.4421,0.6372,0.0,0.3243

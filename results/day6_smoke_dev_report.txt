@@ -1,0 +1,24 @@
+{"weights": "none", "seed": 42, "epoch": 5, "dev_acc": 0.4688, "dev_wf1": 0.3811, "dev_mf1": 0.2331, "per_class_f1": {"anger": 0.2278, "disgust": 0.0, "fear": 0.0, "joy": 0.4421, "neutral": 0.6372, "sadness": 0.0, "surprise": 0.3243}, "lr": 2e-05, "batch": 16, "epochs": 5, "max_length": 128, "model": "roberta-base", "labels": ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"], "saved_at": "2026-09-27 14:19"}
+
+              precision    recall  f1-score   support
+
+       anger      0.500     0.148     0.228        61
+     disgust      0.000     0.000     0.000         7
+        fear      0.000     0.000     0.000        11
+         joy      0.344     0.618     0.442        34
+     neutral      0.491     0.908     0.637       119
+     sadness      0.000     0.000     0.000        35
+    surprise      0.571     0.226     0.324        53
+
+    accuracy                          0.469       320
+   macro avg      0.272     0.271     0.233       320
+weighted avg      0.409     0.469     0.381       320
+
+gold\pred  ange  disg  fear   joy  neut  sadn  surp
+anger         9     0     0     8    41     0     3
+disgust       2     0     0     1     4     0     0
+fear          1     0     0     6     4     0     0
+joy           2     0     0    21    11     0     0
+neutral       0     0     0     6   108     0     5
+sadness       0     0     0     5    29     0     1
+surprise      4     0     0    14    23     0    12
