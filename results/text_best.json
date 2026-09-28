@@ -1,18 +1,18 @@
 {
-  "weights": "sqrt",
-  "seed": 44,
-  "epoch": 3,
-  "dev_acc": 0.6141,
-  "dev_wf1": 0.6076,
-  "dev_mf1": 0.4854,
+  "weights": "none",
+  "seed": 42,
+  "epoch": 2,
+  "dev_acc": 0.6168,
+  "dev_wf1": 0.6068,
+  "dev_mf1": 0.4564,
   "per_class_f1": {
-    "anger": 0.4091,
-    "disgust": 0.3571,
-    "fear": 0.2667,
-    "joy": 0.5683,
-    "neutral": 0.7669,
-    "sadness": 0.3804,
-    "surprise": 0.6491
+    "anger": 0.4172,
+    "disgust": 0.1379,
+    "fear": 0.2745,
+    "joy": 0.5742,
+    "neutral": 0.7759,
+    "sadness": 0.3952,
+    "surprise": 0.6198
   },
   "lr": 2e-05,
   "batch": 16,
@@ -28,5 +28,5 @@
     "sadness",
     "surprise"
   ],
-  "saved_at": "2026-09-27 18:15"
+  "saved_at": "2026-09-28 13:45"
 }

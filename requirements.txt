@@ -1,0 +1,11 @@
+transformers==5.17.0
+librosa==0.11.0
+soundfile==0.14.0
+openai-whisper==20250625
+jiwer==4.0.0
+pandas==3.0.6
+numpy==2.4.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+huggingface_hub==1.32.0
+imageio-ffmpeg==0.6.0

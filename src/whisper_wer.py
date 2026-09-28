@@ -30,7 +30,7 @@ import torch
 import whisper
 from whisper.normalizers import EnglishTextNormalizer
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "MELD"
 OUT_DIR = ROOT / "results"
 MODEL_DIR = r"F:\hf_cache\whisper"

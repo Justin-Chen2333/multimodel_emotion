@@ -1,5 +1,26 @@
-/data/MELD/audio
-/data/MELD/MELD.Raw
-data/MELD/MELD.Raw/train.tar.gz
+# 数据（10.9GB 视频 + wav，不提交）
+data/
 
-/data/MELD
+# 模型权重和大数组
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.npy
+*.npz
+*.h5
+
+# 实验追踪 / 缓存
+wandb/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 冒烟测试输出
+results/day6_smoke_*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

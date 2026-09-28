@@ -30,7 +30,7 @@ from transformers import RobertaModel, RobertaTokenizer
 
 from whisper_wer import fix_text  # Day 3 写的乱码清洗
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "MELD"
 OUT_DIR = ROOT / "results"
 MODEL_NAME = "roberta-base"
