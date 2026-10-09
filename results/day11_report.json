@@ -1,0 +1,94 @@
+{
+  "args": {
+    "modalities": [
+      "text",
+      "audio"
+    ],
+    "scale_fix": [
+      "text_ln"
+    ],
+    "lr_head": [
+      0.001
+    ],
+    "lr_text": 2e-05,
+    "seeds": [
+      42
+    ],
+    "freeze_text": true,
+    "epochs": 1,
+    "batch": 16,
+    "warmup": 0.1,
+    "weight_decay": 0.01,
+    "max_length": 128,
+    "log_every": 50,
+    "eval_every": 125,
+    "audio_model": "facebook/wav2vec2-base",
+    "limit": 0,
+    "no_amp": false,
+    "wandb": false
+  },
+  "reference": {
+    "text": {
+      "acc": 0.6164,
+      "wf1": 0.6065,
+      "mf1": 0.4563
+    },
+    "neutral": {
+      "acc": 0.4233,
+      "wf1": 0.2518,
+      "mf1": 0.085
+    }
+  },
+  "runs": [
+    {
+      "run": "text+audio_text_ln_lrh0.001_frozen_e1_s42",
+      "modalities": "text,audio",
+      "scale_fix": "text_ln",
+      "lr_text": 2e-05,
+      "lr_head": 0.001,
+      "freeze_text": true,
+      "epochs": 1,
+      "seed": 42,
+      "steps": 625,
+      "secs": 8.3,
+      "loss_step1": 1.8757,
+      "loss_init": 1.8309,
+      "k0": 10,
+      "loss_first_k": 1.5865,
+      "loss_last_k": 1.36,
+      "k": 50,
+      "loss_drop": 0.2572,
+      "dev0_acc": 0.1318,
+      "dev0_wf1": 0.0446,
+      "best_epoch": 1,
+      "dev_acc": 0.5551,
+      "dev_wf1": 0.4948,
+      "dev_mf1": 0.2996,
+      "dev_loss": 1.3305,
+      "f1_anger": 0.4264,
+      "f1_disgust": 0.0,
+      "f1_fear": 0.0,
+      "f1_joy": 0.432,
+      "f1_neutral": 0.7214,
+      "f1_sadness": 0.0847,
+      "f1_surprise": 0.4324,
+      "norm_text": 26.155,
+      "contrib_text": 8.902,
+      "contribc_text": 3.339,
+      "norm_audio": 26.525,
+      "contrib_audio": 16.955,
+      "contribc_audio": 5.71,
+      "shuffled_audio_wf1": 0.4039,
+      "shuffled_text_wf1": 0.3293,
+      "layer_weights": "0.0717 0.0734 0.0762 0.0792 0.0791 0.0812 0.0827 0.0842 0.0839 0.0789 0.0722 0.0687 0.0688"
+    }
+  ],
+  "checks": {
+    "1 epoch 训练完成": true,
+    "loss 明显下降（最后 50 步比前 10 步降了 26%，要求 ≥ 33%）": false,
+    "val accuracy 有改善（0.1318 → 0.5551）": true
+  },
+  "gpu_peak_GB": 0.61,
+  "text_model": "roberta-base",
+  "saved_at": "2026-10-02 11:07"
+}

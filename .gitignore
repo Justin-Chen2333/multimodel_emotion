@@ -18,9 +18,27 @@ __pycache__/
 
 # 冒烟测试输出
 results/day6_smoke_*
+results/day11_smoke_*
 
 # 编辑器 / 系统
 .vscode/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Day 17：Space 组装目录（deploy_day17.py build 生成）
+build/
+
+# 所有冒烟测试输出
+results/*_smoke_*
+
+# Day 17：自己录的示例音频不公开（只留 examples.csv）
+space/examples/*.m4a
+space/examples/*.wav
+space/examples/*.mp3
+
+# Day 18：冒烟测试的 json（day9_extract_smoke.json 这类，上面 *_smoke_* 匹配不到）
+results/*_smoke.*
+
+# 临时 notebook
+Untitled*.ipynb

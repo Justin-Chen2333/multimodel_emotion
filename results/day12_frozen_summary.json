@@ -1,0 +1,335 @@
+{
+  "args": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "save_seed": 42,
+    "epochs": 5,
+    "modalities": [
+      "text",
+      "audio"
+    ],
+    "scale_fix": "text_ln",
+    "lr_head": 0.001,
+    "lr_text": 2e-05,
+    "freeze_text": true,
+    "batch": 16,
+    "warmup": 0.1,
+    "weight_decay": 0.01,
+    "max_length": 128,
+    "log_every": 100,
+    "eval_every": 0,
+    "audio_model": "facebook/wav2vec2-base",
+    "tag": "day12_frozen",
+    "bootstrap": 2000,
+    "limit": 0,
+    "no_save": false,
+    "no_amp": false,
+    "wandb": false
+  },
+  "config": {
+    "modalities": [
+      "text",
+      "audio"
+    ],
+    "scale_fix": "text_ln",
+    "lr_text": 2e-05,
+    "lr_head": 0.001,
+    "freeze_text": true,
+    "epochs": 5
+  },
+  "is_default_config": false,
+  "reference": {
+    "text": {
+      "acc": 0.6164,
+      "wf1": 0.6065,
+      "mf1": 0.4563
+    },
+    "neutral": {
+      "acc": 0.4233,
+      "wf1": 0.2518,
+      "mf1": 0.085
+    }
+  },
+  "text3": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "wf1": [
+      0.6068,
+      0.603,
+      0.6023
+    ],
+    "acc_mean": 0.618,
+    "acc_sd": 0.003,
+    "mf1_mean": 0.458,
+    "mf1_sd": 0.003,
+    "best_epochs": [
+      2,
+      3,
+      3
+    ],
+    "note": "Day 6 · 不加权 · 每个 seed 取最佳 epoch · dev 1109 口径（和 1108 口径差约 0.0003）"
+  },
+  "text_s42_dev1108": {
+    "source": "day6_dev_probs.npy（1109 条 wF1 0.6068，和 text_best.json 一致）",
+    "acc": 0.6164,
+    "wf1": 0.6065,
+    "mf1": 0.4563
+  },
+  "multimodal": {
+    "wf1": [
+      0.5564,
+      0.5574,
+      0.559
+    ],
+    "wf1_mean": 0.5576,
+    "wf1_sd": 0.0013,
+    "acc_mean": 0.599,
+    "mf1_mean": 0.3622,
+    "best_epochs": [
+      5,
+      4,
+      5
+    ],
+    "dev_loss_min_epochs": [
+      5,
+      5,
+      5
+    ]
+  },
+  "delta_wf1": -0.0464,
+  "per_class": [
+    {
+      "label": "anger",
+      "support": 153,
+      "text_s42": 0.4172,
+      "mm_mean": 0.4645,
+      "mm_sd": 0.0125,
+      "delta": 0.0473
+    },
+    {
+      "label": "disgust",
+      "support": 22,
+      "text_s42": 0.1379,
+      "mm_mean": 0.0,
+      "mm_sd": 0.0,
+      "delta": -0.1379
+    },
+    {
+      "label": "fear",
+      "support": 40,
+      "text_s42": 0.2745,
+      "mm_mean": 0.0,
+      "mm_sd": 0.0,
+      "delta": -0.2745
+    },
+    {
+      "label": "joy",
+      "support": 163,
+      "text_s42": 0.5742,
+      "mm_mean": 0.532,
+      "mm_sd": 0.0135,
+      "delta": -0.0422
+    },
+    {
+      "label": "neutral",
+      "support": 469,
+      "text_s42": 0.7754,
+      "mm_mean": 0.753,
+      "mm_sd": 0.0042,
+      "delta": -0.0224
+    },
+    {
+      "label": "sadness",
+      "support": 111,
+      "text_s42": 0.3952,
+      "mm_mean": 0.2822,
+      "mm_sd": 0.0274,
+      "delta": -0.113
+    },
+    {
+      "label": "surprise",
+      "support": 150,
+      "text_s42": 0.6198,
+      "mm_mean": 0.5041,
+      "mm_sd": 0.0124,
+      "delta": -0.1157
+    }
+  ],
+  "bootstrap": {
+    "diff": -0.05002979171973909,
+    "lo": -0.0774027194761929,
+    "hi": -0.023493161316457692,
+    "p_le0": 1.0,
+    "n": 2000
+  },
+  "layer_weights_mean": [
+    0.065,
+    0.058,
+    0.065,
+    0.0788,
+    0.0748,
+    0.0886,
+    0.1026,
+    0.1073,
+    0.1117,
+    0.0833,
+    0.0597,
+    0.0531,
+    0.0521
+  ],
+  "verdict": "多模态比文本基线低 0.0464 wF1，seed 之间和 dev 抽样两种噪声下都站得住",
+  "checks": {
+    "3 个 seed × 5 epochs 多模态训练完成": true,
+    "记录到 val weighted F1：0.5576 ± 0.0013": true,
+    "vs 文本基线的变化已记录：Δ -0.0464": true
+  },
+  "runs": [
+    {
+      "run": "text+audio_text_ln_lrh0.001_frozen_e5_s42",
+      "modalities": "text,audio",
+      "scale_fix": "text_ln",
+      "lr_text": 2e-05,
+      "lr_head": 0.001,
+      "freeze_text": true,
+      "epochs": 5,
+      "seed": 42,
+      "steps": 3125,
+      "secs": 34.9,
+      "loss_step1": 1.8757,
+      "loss_init": 1.8896,
+      "k0": 10,
+      "loss_first_k": 1.6803,
+      "loss_last_k": 1.0552,
+      "k": 50,
+      "loss_drop": 0.4416,
+      "dev0_acc": 0.1318,
+      "dev0_wf1": 0.0446,
+      "best_epoch": 5,
+      "dev_acc": 0.5984,
+      "dev_wf1": 0.5564,
+      "dev_mf1": 0.3612,
+      "dev_loss": 1.1772,
+      "f1_anger": 0.4633,
+      "f1_disgust": 0.0,
+      "f1_fear": 0.0,
+      "f1_joy": 0.5465,
+      "f1_neutral": 0.7482,
+      "f1_sadness": 0.255,
+      "f1_surprise": 0.5157,
+      "norm_text": 18.302,
+      "contrib_text": 9.858,
+      "contribc_text": 5.971,
+      "norm_audio": 21.744,
+      "contrib_audio": 19.217,
+      "contribc_audio": 9.316,
+      "shuffled_audio_wf1": 0.4801,
+      "shuffled_text_wf1": 0.3088,
+      "shuffle_on": "best",
+      "layer_weights": "0.0642 0.0577 0.0655 0.0796 0.0739 0.0906 0.1043 0.1089 0.1122 0.0822 0.0592 0.0504 0.0512",
+      "dev_wf1_no_shared": 0.5556,
+      "n_no_shared": 1106,
+      "pred_counts": "106 0 0 192 635 38 137"
+    },
+    {
+      "run": "text+audio_text_ln_lrh0.001_frozen_e5_s43",
+      "modalities": "text,audio",
+      "scale_fix": "text_ln",
+      "lr_text": 2e-05,
+      "lr_head": 0.001,
+      "freeze_text": true,
+      "epochs": 5,
+      "seed": 43,
+      "steps": 3125,
+      "secs": 34.9,
+      "loss_step1": 1.9732,
+      "loss_init": 1.9529,
+      "k0": 10,
+      "loss_first_k": 1.7052,
+      "loss_last_k": 0.9777,
+      "k": 50,
+      "loss_drop": 0.4994,
+      "dev0_acc": 0.1029,
+      "dev0_wf1": 0.0266,
+      "best_epoch": 4,
+      "dev_acc": 0.5984,
+      "dev_wf1": 0.5574,
+      "dev_mf1": 0.3626,
+      "dev_loss": 1.1876,
+      "f1_anger": 0.4527,
+      "f1_disgust": 0.0,
+      "f1_fear": 0.0,
+      "f1_joy": 0.5297,
+      "f1_neutral": 0.7548,
+      "f1_sadness": 0.3097,
+      "f1_surprise": 0.4911,
+      "norm_text": 18.604,
+      "contrib_text": 9.999,
+      "contribc_text": 5.871,
+      "norm_audio": 21.209,
+      "contrib_audio": 18.867,
+      "contribc_audio": 9.148,
+      "shuffled_audio_wf1": 0.4783,
+      "shuffled_text_wf1": 0.3092,
+      "shuffle_on": "best",
+      "layer_weights": "0.0650 0.0568 0.0659 0.0796 0.0747 0.0877 0.1008 0.1072 0.1136 0.0835 0.0605 0.0518 0.0529",
+      "dev_wf1_no_shared": 0.5566,
+      "n_no_shared": 1106,
+      "pred_counts": "90 0 0 207 636 44 131"
+    },
+    {
+      "run": "text+audio_text_ln_lrh0.001_frozen_e5_s44",
+      "modalities": "text,audio",
+      "scale_fix": "text_ln",
+      "lr_text": 2e-05,
+      "lr_head": 0.001,
+      "freeze_text": true,
+      "epochs": 5,
+      "seed": 44,
+      "steps": 3125,
+      "secs": 34.9,
+      "loss_step1": 1.9051,
+      "loss_init": 1.8944,
+      "k0": 10,
+      "loss_first_k": 1.684,
+      "loss_last_k": 0.9988,
+      "k": 50,
+      "loss_drop": 0.4728,
+      "dev0_acc": 0.1597,
+      "dev0_wf1": 0.077,
+      "best_epoch": 5,
+      "dev_acc": 0.6002,
+      "dev_wf1": 0.559,
+      "dev_mf1": 0.3629,
+      "dev_loss": 1.1745,
+      "f1_anger": 0.4776,
+      "f1_disgust": 0.0,
+      "f1_fear": 0.0,
+      "f1_joy": 0.5198,
+      "f1_neutral": 0.7559,
+      "f1_sadness": 0.2819,
+      "f1_surprise": 0.5054,
+      "norm_text": 18.511,
+      "contrib_text": 10.223,
+      "contribc_text": 5.895,
+      "norm_audio": 21.72,
+      "contrib_audio": 18.691,
+      "contribc_audio": 9.241,
+      "shuffled_audio_wf1": 0.4666,
+      "shuffled_text_wf1": 0.3025,
+      "shuffle_on": "best",
+      "layer_weights": "0.0658 0.0595 0.0637 0.0773 0.0757 0.0875 0.1026 0.1058 0.1092 0.0843 0.0593 0.0570 0.0523",
+      "dev_wf1_no_shared": 0.5582,
+      "n_no_shared": 1106,
+      "pred_counts": "115 0 0 191 637 38 127"
+    }
+  ],
+  "minutes": 1.8,
+  "gpu_peak_GB": 0.61,
+  "saved_at": "2026-10-04 12:40"
+}

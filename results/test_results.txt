@@ -1,0 +1,187 @@
+MELD test set — final evaluation (Day 14, 2026-10-05 09:41)
+n = 2610 test utterances (all have audio). Checkpoints are the seed-42 models whose best epoch was chosen on dev before the test set was touched; nothing was tuned on test.
+Always-neutral baseline: test weighted F1 0.3127
+
+== Summary (seed 42) ==
+model                                 dev wF1  test acc  test wF1  test mF1  wF1 w/o shared audio
+text + audio                           0.6008    0.6383    0.6338    0.4722                0.6333
+text-only                              0.6039    0.6230    0.6219    0.4640                0.6212
+audio-only                             0.4357    0.4908    0.4559    0.2576                0.4574
+text-only · TextClassifier (Day 6)     0.6065    0.6299    0.6270    0.4531                0.6263
+text + audio (frozen RoBERTa)          0.5564    0.6326    0.5934    0.3600                0.5926
+text-only (frozen RoBERTa)             0.5494    0.6264    0.5898    0.3636                0.5893
+
+== Multiple seeds (mean ± sd; best epoch per seed chosen on dev) ==
+text + audio                         seeds 42 43 44: test wF1 0.6391 ± 0.0085, mF1 0.4671 ± 0.0151
+text-only                            seeds 42 43 44: test wF1 0.6264 ± 0.0070, mF1 0.4509 ± 0.0167
+audio-only                           seeds 42 43 44: test wF1 0.4548 ± 0.0030, mF1 0.2567 ± 0.0009
+
+== Paired bootstrap over test utterances (2000 resamples) ==
+text+audio vs text-only (what audio adds): Δ wF1 +0.0127, 95% CI [+0.0052, +0.0201] (3-seed mean)
+text+audio vs Day 6 TextClassifier: Δ wF1 +0.0068, 95% CI [-0.0077, +0.0202] (seed 42)
+text+audio vs audio-only (what text adds): Δ wF1 +0.1842, 95% CI [+0.1657, +0.2031] (3-seed mean)
+text-only vs audio-only: Δ wF1 +0.1716, 95% CI [+0.1514, +0.1913] (3-seed mean)
+frozen RoBERTa: text+audio vs text-only: Δ wF1 +0.0036, 95% CI [-0.0087, +0.0164] (seed 42)
+
+== Per-class F1 (test) ==
+class         n    text-only   audio-only text + audio   Δ test   Δ dev
+anger       345        0.458        0.334        0.498   +0.041  +0.062
+disgust      68        0.238        0.000        0.247   +0.009  -0.000
+fear         50        0.166        0.011        0.204   +0.038  +0.008
+joy         402        0.595        0.279        0.600   +0.005  -0.007
+neutral    1256        0.781        0.660        0.791   +0.010  -0.003
+sadness     208        0.359        0.190        0.370   +0.010  +0.004
+surprise    281        0.559        0.323        0.560   +0.001  -0.003
+
+== Calibration (text + audio, temperature fitted on dev: T = 1.86) ==
+test NLL 1.298 -> 1.079; ECE 0.175 -> 0.024
+
+== text + audio — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.544     0.446     0.490       345
+     disgust      0.308     0.235     0.267        68
+        fear      0.217     0.260     0.236        50
+         joy      0.566     0.642     0.601       402
+     neutral      0.772     0.789     0.781      1256
+     sadness      0.469     0.332     0.389       208
+    surprise      0.502     0.587     0.541       281
+
+    accuracy                          0.638      2610
+   macro avg      0.483     0.470     0.472      2610
+weighted avg      0.634     0.638     0.634      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        154     11      8     47     64     11     50
+disgust       11     16      0      3     25      5      8
+fear           5      1     13      4     17      4      6
+joy           19      5      4    258     77      7     32
+neutral       40     13     20     91    991     46     55
+sadness       18      5     10     23     70     69     13
+surprise      36      1      5     30     39      5    165
+
+== text-only — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.502     0.426     0.461       345
+     disgust      0.264     0.279     0.271        68
+        fear      0.218     0.240     0.229        50
+         joy      0.539     0.657     0.592       402
+     neutral      0.778     0.755     0.766      1256
+     sadness      0.426     0.332     0.373       208
+    surprise      0.522     0.594     0.556       281
+
+    accuracy                          0.623      2610
+   macro avg      0.464     0.469     0.464      2610
+weighted avg      0.625     0.623     0.622      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        147     15     10     56     63     15     39
+disgust       11     19      0      3     24      6      5
+fear           7      0     12      5     15      5      6
+joy           23      5      1    264     70      8     31
+neutral       47     22     19    107    948     55     58
+sadness       19      7     11     26     62     69     14
+surprise      39      4      2     29     36      4    167
+
+== audio-only — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.414     0.293     0.343       345
+     disgust      0.000     0.000     0.000        68
+        fear      0.000     0.000     0.000        50
+         joy      0.284     0.284     0.284       402
+     neutral      0.579     0.762     0.658      1256
+     sadness      0.373     0.135     0.198       208
+    surprise      0.362     0.288     0.321       281
+
+    accuracy                          0.491      2610
+   macro avg      0.287     0.252     0.258      2610
+weighted avg      0.446     0.491     0.456      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        101      2      1     45    156      8     32
+disgust       14      0      0     12     35      4      3
+fear           8      0      0     11     27      0      4
+joy           25      0      0    114    225      9     29
+neutral       60      4      4    148    957     22     61
+sadness       17      0      0     23    126     28     14
+surprise      19      1      0     49    127      4     81
+
+== text-only · TextClassifier (Day 6) — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.473     0.507     0.490       345
+     disgust      0.394     0.191     0.257        68
+        fear      0.132     0.340     0.190        50
+         joy      0.617     0.585     0.600       402
+     neutral      0.775     0.788     0.781      1256
+     sadness      0.500     0.212     0.297       208
+    surprise      0.514     0.605     0.556       281
+
+    accuracy                          0.630      2610
+   macro avg      0.486     0.461     0.453      2610
+weighted avg      0.638     0.630     0.627      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        175      4     16     33     67      6     44
+disgust       17     13      3      2     23      3      7
+fear          11      0     17      2     13      2      5
+joy           35      5     13    235     76      5     33
+neutral       58      6     49     70    990     25     58
+sadness       31      3     27     13     76     44     14
+surprise      43      2      4     26     33      3    170
+
+== text + audio (frozen RoBERTa) — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.520     0.377     0.437       345
+     disgust      0.000     0.000     0.000        68
+        fear      0.000     0.000     0.000        50
+         joy      0.511     0.562     0.536       402
+     neutral      0.699     0.895     0.785      1256
+     sadness      0.516     0.154     0.237       208
+    surprise      0.560     0.495     0.526       281
+
+    accuracy                          0.633      2610
+   macro avg      0.401     0.355     0.360      2610
+weighted avg      0.585     0.633     0.593      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        130      0      0     64    106      2     43
+disgust       18      0      0      5     40      2      3
+fear          11      0      0     10     23      3      3
+joy           24      0      0    226    129      6     17
+neutral       24      0      0     64   1124     13     31
+sadness       22      0      0     23    119     32     12
+surprise      21      0      0     50     67      4    139
+
+== text-only (frozen RoBERTa) — classification report (seed 42) ==
+              precision    recall  f1-score   support
+
+       anger      0.494     0.333     0.398       345
+     disgust      0.000     0.000     0.000        68
+        fear      1.000     0.020     0.039        50
+         joy      0.528     0.570     0.548       402
+     neutral      0.698     0.881     0.779      1256
+     sadness      0.425     0.178     0.251       208
+    surprise      0.541     0.520     0.530       281
+
+    accuracy                          0.626      2610
+   macro avg      0.527     0.357     0.364      2610
+weighted avg      0.594     0.626     0.590      2610
+
+Confusion matrix (rows = gold, columns = predicted):
+gold\pred  anger  disgu   fear    joy  neutr  sadne  surpr
+anger        115      0      0     70    113      6     41
+disgust       19      0      0      3     36      1      9
+fear           7      0      1      6     25      6      5
+joy           23      0      0    229    127      5     18
+neutral       22      0      0     54   1107     28     45
+sadness       22      0      0     27    116     37      6
+surprise      25      0      0     45     61      4    146

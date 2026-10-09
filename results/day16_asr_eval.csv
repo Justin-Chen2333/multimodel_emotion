@@ -1,0 +1,13 @@
+split,model,acc,wf1,mf1
+dev,text + voice · MELD text,0.6092,0.6008,0.4681
+dev,text + voice · Whisper text,0.5253,0.5086,0.3918
+dev,text only · MELD text,0.6101,0.6039,0.4705
+dev,text only · Whisper text,0.5009,0.4861,0.371
+dev,voice only,0.472,0.4357,0.2758
+dev,demo routing (Whisper; empty → voice),0.528,0.5134,0.3945
+test,text + voice · MELD text,0.6383,0.6338,0.4722
+test,text + voice · Whisper text,0.5406,0.5233,0.3645
+test,text only · MELD text,0.623,0.6219,0.464
+test,text only · Whisper text,0.5245,0.5101,0.346
+test,voice only,0.4908,0.4559,0.2576
+test,demo routing (Whisper; empty → voice),0.5364,0.5219,0.3642

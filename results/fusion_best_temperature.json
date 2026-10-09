@@ -1,0 +1,15 @@
+{
+  "temperature": 1.857,
+  "fitted_on": "dev (1108 utterances, fusion_best.pt seed 42)",
+  "usage": "probs = softmax(logits / T)",
+  "dev_nll_before": 1.3407,
+  "dev_nll_after": 1.1175,
+  "test_nll_before": 1.2984,
+  "test_nll_after": 1.0795,
+  "test_ece_before": 0.1755,
+  "test_ece_after": 0.0238,
+  "test_mean_conf_before": 0.8134,
+  "test_mean_conf_after": 0.6382,
+  "test_acc": 0.6383,
+  "saved_at": "2026-10-05 09:41"
+}

@@ -1,0 +1,17 @@
+{
+  "mm": {
+    "T": 1.857,
+    "fitted_on": "dev 1108 utterances (day12_dev_probs_s42.npy)",
+    "dev_acc": 0.6092
+  },
+  "text": {
+    "T": 1.682,
+    "fitted_on": "dev 1108 utterances (day13_text_dev_probs_s42.npy)",
+    "dev_acc": 0.6101
+  },
+  "audio": {
+    "T": 1.707,
+    "fitted_on": "dev 1108 utterances (day13_audio_e20_dev_probs_s42.npy)",
+    "dev_acc": 0.472
+  }
+}

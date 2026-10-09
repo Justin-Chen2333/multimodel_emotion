@@ -1,0 +1,427 @@
+{
+  "n_dev": 1108,
+  "ablation": [
+    {
+      "model": "text-only",
+      "input": "text",
+      "roberta": "fine-tuned",
+      "n_seeds": 3,
+      "acc_mean": 0.6179333333333333,
+      "acc_sd": 0.012796223401196707,
+      "wf1_mean": 0.6029,
+      "wf1_sd": 0.0017320508075688791,
+      "mf1_mean": 0.4567333333333334,
+      "mf1_sd": 0.012833679649006868,
+      "wf1_seeds": "0.6039 0.6009 0.6039",
+      "best_epochs": "[4, 2, 2]",
+      "wf1_no_shared": 0.6023
+    },
+    {
+      "model": "audio-only",
+      "input": "audio (wav2vec2, 13 layers)",
+      "roberta": "—",
+      "n_seeds": 3,
+      "acc_mean": 0.47229999999999994,
+      "acc_sd": 0.004058324777540603,
+      "wf1_mean": 0.4352333333333333,
+      "wf1_sd": 0.0014571661996263011,
+      "mf1_mean": 0.27396666666666664,
+      "mf1_sd": 0.003617089069035121,
+      "wf1_seeds": "0.4357 0.4364 0.4336",
+      "best_epochs": "[13, 14, 20]",
+      "wf1_no_shared": 0.43616666666666665
+    },
+    {
+      "model": "text + audio",
+      "input": "text + audio",
+      "roberta": "fine-tuned",
+      "n_seeds": 3,
+      "acc_mean": 0.6251666666666666,
+      "acc_sd": 0.01440844659681722,
+      "wf1_mean": 0.6094333333333334,
+      "wf1_sd": 0.007678758580222039,
+      "mf1_mean": 0.4654333333333333,
+      "mf1_sd": 0.013991902420090472,
+      "wf1_seeds": "0.6008 0.6155 0.6120",
+      "best_epochs": "[5, 3, 2]",
+      "wf1_no_shared": 0.6088
+    },
+    {
+      "model": "text + audio (frozen RoBERTa)",
+      "input": "text + audio",
+      "roberta": "frozen",
+      "n_seeds": 3,
+      "acc_mean": 0.5990000000000001,
+      "acc_sd": 0.001039230484541276,
+      "wf1_mean": 0.5576,
+      "wf1_sd": 0.001311487704860425,
+      "mf1_mean": 0.36223333333333335,
+      "mf1_sd": 0.0009073771725877304,
+      "wf1_seeds": "0.5564 0.5574 0.5590",
+      "best_epochs": "[5, 4, 5]",
+      "wf1_no_shared": 0.5568000000000001
+    },
+    {
+      "model": "text-only (frozen RoBERTa)",
+      "input": "text",
+      "roberta": "frozen",
+      "n_seeds": 3,
+      "acc_mean": 0.5911666666666667,
+      "acc_sd": 0.002750151510977748,
+      "wf1_mean": 0.5431666666666667,
+      "wf1_sd": 0.005644761583391582,
+      "mf1_mean": 0.34426666666666667,
+      "mf1_sd": 0.006652317891782784,
+      "wf1_seeds": "0.5494 0.5384 0.5417",
+      "best_epochs": "[4, 3, 5]",
+      "wf1_no_shared": 0.5423
+    }
+  ],
+  "reference": [
+    [
+      "text-only · TextClassifier (Day 6, n=1109)",
+      "0.618 ± 0.003",
+      "0.6040 ± 0.0024",
+      "0.458 ± 0.003",
+      "[2, 3, 3]"
+    ],
+    [
+      "audio linear probe (Day 9, mean13, 1 run)",
+      "0.456",
+      "0.424",
+      "0.270",
+      "—"
+    ],
+    [
+      "always neutral",
+      "0.4233",
+      "0.2518",
+      "0.0850",
+      "—"
+    ]
+  ],
+  "bootstrap": {
+    "mm_vs_text": {
+      "diff": 0.006491154021468493,
+      "lo": -0.0039619353678197,
+      "hi": 0.018315514863286236,
+      "p_le0": 0.115,
+      "n": 2000,
+      "pooled_sd": 0.0055661177374060995,
+      "n_sd": 1.1661905708256677
+    },
+    "mm_vs_audio": {
+      "diff": 0.17421130521134687,
+      "lo": 0.14447539920629732,
+      "hi": 0.20315725948849706,
+      "p_le0": 0.0,
+      "n": 2000,
+      "pooled_sd": 0.005526602331752618,
+      "n_sd": 31.522316018728326
+    },
+    "text_vs_audio": {
+      "diff": 0.16772015118987837,
+      "lo": 0.13488699644959512,
+      "hi": 0.19747279652666383,
+      "p_le0": 0.0,
+      "n": 2000,
+      "pooled_sd": 0.0016005207485898713,
+      "n_sd": 104.7909883940256
+    },
+    "mm_vs_frozen": {
+      "diff": 0.051798639040636196,
+      "lo": 0.02940848381120465,
+      "hi": 0.0737265161691678,
+      "p_le0": 0.0,
+      "n": 2000,
+      "pooled_sd": 0.005508327029749307,
+      "n_sd": 9.403697122716702
+    },
+    "frozen_vs_tfrozen": {
+      "diff": 0.014459018194004525,
+      "lo": -0.0037090750955783153,
+      "hi": 0.03207278401151345,
+      "p_le0": 0.064,
+      "n": 2000,
+      "pooled_sd": 0.0040977636177147595,
+      "n_sd": 3.528514463718146
+    }
+  },
+  "per_class": [
+    {
+      "label": "anger",
+      "support": 153,
+      "text_mean": 0.408,
+      "text_sd": 0.0318,
+      "audio_mean": 0.4289,
+      "audio_sd": 0.0006,
+      "mm_mean": 0.4699,
+      "mm_sd": 0.0432,
+      "frozen_mean": 0.4645,
+      "frozen_sd": 0.0125,
+      "tfrozen_mean": 0.3849,
+      "tfrozen_sd": 0.0248,
+      "delta_mm_text": 0.0619
+    },
+    {
+      "label": "disgust",
+      "support": 22,
+      "text_mean": 0.2057,
+      "text_sd": 0.0632,
+      "audio_mean": 0.0,
+      "audio_sd": 0.0,
+      "mm_mean": 0.2053,
+      "mm_sd": 0.0629,
+      "frozen_mean": 0.0,
+      "frozen_sd": 0.0,
+      "tfrozen_mean": 0.0,
+      "tfrozen_sd": 0.0,
+      "delta_mm_text": -0.0004
+    },
+    {
+      "label": "fear",
+      "support": 40,
+      "text_mean": 0.2268,
+      "text_sd": 0.0293,
+      "audio_mean": 0.0567,
+      "audio_sd": 0.0491,
+      "mm_mean": 0.2348,
+      "mm_sd": 0.0346,
+      "frozen_mean": 0.0,
+      "frozen_sd": 0.0,
+      "tfrozen_mean": 0.0,
+      "tfrozen_sd": 0.0,
+      "delta_mm_text": 0.008
+    },
+    {
+      "label": "joy",
+      "support": 163,
+      "text_mean": 0.5702,
+      "text_sd": 0.0145,
+      "audio_mean": 0.2417,
+      "audio_sd": 0.0097,
+      "mm_mean": 0.5634,
+      "mm_sd": 0.024,
+      "frozen_mean": 0.532,
+      "frozen_sd": 0.0135,
+      "tfrozen_mean": 0.5635,
+      "tfrozen_sd": 0.0036,
+      "delta_mm_text": -0.0068
+    },
+    {
+      "label": "neutral",
+      "support": 469,
+      "text_mean": 0.7727,
+      "text_sd": 0.0121,
+      "audio_mean": 0.6401,
+      "audio_sd": 0.0049,
+      "mm_mean": 0.7694,
+      "mm_sd": 0.0165,
+      "frozen_mean": 0.7529,
+      "frozen_sd": 0.0042,
+      "tfrozen_mean": 0.7507,
+      "tfrozen_sd": 0.0044,
+      "delta_mm_text": -0.0033
+    },
+    {
+      "label": "sadness",
+      "support": 111,
+      "text_mean": 0.3947,
+      "text_sd": 0.0179,
+      "audio_mean": 0.1995,
+      "audio_sd": 0.0127,
+      "mm_mean": 0.3986,
+      "mm_sd": 0.0105,
+      "frozen_mean": 0.2822,
+      "frozen_sd": 0.0273,
+      "tfrozen_mean": 0.1958,
+      "tfrozen_sd": 0.0489,
+      "delta_mm_text": 0.0039
+    },
+    {
+      "label": "surprise",
+      "support": 150,
+      "text_mean": 0.6193,
+      "text_sd": 0.018,
+      "audio_mean": 0.3506,
+      "audio_sd": 0.0211,
+      "mm_mean": 0.6167,
+      "mm_sd": 0.0092,
+      "frozen_mean": 0.5041,
+      "frozen_sd": 0.0123,
+      "tfrozen_mean": 0.5152,
+      "tfrozen_sd": 0.0231,
+      "delta_mm_text": -0.0026
+    }
+  ],
+  "confusion_diff_mm_minus_text": [
+    [
+      12.0,
+      1.0,
+      -0.33,
+      -3.67,
+      1.67,
+      -7.33,
+      -3.33
+    ],
+    [
+      -0.67,
+      -0.33,
+      0.33,
+      0.0,
+      0.33,
+      0.33,
+      0.0
+    ],
+    [
+      -0.33,
+      -0.67,
+      1.0,
+      -1.67,
+      0.0,
+      -0.33,
+      2.0
+    ],
+    [
+      1.67,
+      -0.33,
+      0.33,
+      -4.33,
+      5.0,
+      -1.33,
+      -1.0
+    ],
+    [
+      -0.33,
+      -1.33,
+      1.67,
+      2.0,
+      6.33,
+      -5.0,
+      -3.33
+    ],
+    [
+      -2.67,
+      1.0,
+      1.67,
+      -0.67,
+      3.67,
+      -3.67,
+      0.67
+    ],
+    [
+      5.33,
+      -1.33,
+      1.33,
+      -3.0,
+      3.67,
+      -3.0,
+      -3.0
+    ]
+  ],
+  "confusion_moves": [
+    {
+      "label": "anger",
+      "diag": 12.0,
+      "less_confused_with": {
+        "sadness": -7.33,
+        "joy": -3.67
+      },
+      "more_confused_with": {
+        "neutral": 1.67
+      }
+    },
+    {
+      "label": "disgust",
+      "diag": -0.33,
+      "less_confused_with": {
+        "anger": -0.67
+      },
+      "more_confused_with": {
+        "sadness": 0.33
+      }
+    },
+    {
+      "label": "fear",
+      "diag": 1.0,
+      "less_confused_with": {
+        "joy": -1.67,
+        "disgust": -0.67
+      },
+      "more_confused_with": {
+        "surprise": 2.0
+      }
+    },
+    {
+      "label": "joy",
+      "diag": -4.33,
+      "less_confused_with": {
+        "sadness": -1.33,
+        "surprise": -1.0
+      },
+      "more_confused_with": {
+        "neutral": 5.0
+      }
+    },
+    {
+      "label": "neutral",
+      "diag": 6.33,
+      "less_confused_with": {
+        "sadness": -5.0,
+        "surprise": -3.33
+      },
+      "more_confused_with": {
+        "joy": 2.0
+      }
+    },
+    {
+      "label": "sadness",
+      "diag": -3.67,
+      "less_confused_with": {
+        "anger": -2.67,
+        "joy": -0.67
+      },
+      "more_confused_with": {
+        "neutral": 3.67
+      }
+    },
+    {
+      "label": "surprise",
+      "diag": -3.0,
+      "less_confused_with": {
+        "joy": -3.0,
+        "sadness": -3.0
+      },
+      "more_confused_with": {
+        "anger": 5.33
+      }
+    }
+  ],
+  "fixed": 1,
+  "broken": 1,
+  "modality_reliance": {
+    "shuffle_audio": "-0.0234 ± 0.0074",
+    "shuffle_text": "-0.3494 ± 0.0067",
+    "frozen_shuffle_audio": "-0.0826 ± 0.0086"
+  },
+  "conclusions": [
+    "audio-only wF1 0.4352：远高于全猜 neutral（0.252），高于 Day 9 线性探针（0.424），比 text-only 低 0.168 → 音频有情绪信息，但单独用远不如文本",
+    "text+audio vs text-only（同一结构）：Δ wF1 +0.0065，bootstrap 95% [-0.0040, +0.0183]，约 1.2 个 seed 标准差 → 加音频的整体提升在噪声范围内",
+    "Day 6 TextClassifier vs 同结构 text-only：0.6040 vs 0.6029 → 融合头结构本身几乎没影响",
+    "各类：提升最多 anger +0.062 / fear +0.008，最差 joy -0.007"
+  ],
+  "checks": {
+    "text-only F1 记录完毕": true,
+    "audio-only F1 记录完毕": true,
+    "multimodal F1 记录完毕": true,
+    "消融实验表格截图保存（day13_ablation_table.png）": true
+  },
+  "tags": {
+    "text": "day13_text",
+    "audio": "day13_audio_e20",
+    "mm": "day12",
+    "frozen": "day12_frozen",
+    "tfrozen": "day13_text_frozen"
+  },
+  "saved_at": "2026-10-04 16:22"
+}

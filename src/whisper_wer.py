@@ -15,9 +15,11 @@ Day 3 — Whisper 转录 MELD 音频，并与 CSV 里的 Utterance 标注对比�
   所以在 Jupyter 里 PATH 不对也不会报 "ffmpeg not found"。
 - 参考文本和转录都先过 Whisper 自带的 EnglishTextNormalizer（去标点、统一大小写/数字/缩写），
   这是算 Whisper WER 的标准做法，否则 "Okay." vs "OK" 这种也算错。
-- 模型缓存在 F:\\hf_cache\\whisper，不占 C 盘。
+- 模型缓存默认在 F:\\hf_cache\\whisper，不占 C 盘；设环境变量 WHISPER_MODEL_DIR 可改
+  （Day 15 起；部署到 HF Spaces / 别的电脑时用，例如 $env:WHISPER_MODEL_DIR="D:\\cache\\whisper"）。
 """
 import argparse
+import os
 import re
 import time
 from pathlib import Path
@@ -30,10 +32,11 @@ import torch
 import whisper
 from whisper.normalizers import EnglishTextNormalizer
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]  # 脚本在 src\，项目根目录是上一级
 DATA = ROOT / "data" / "MELD"
 OUT_DIR = ROOT / "results"
-MODEL_DIR = r"F:\hf_cache\whisper"
+# Day 15：不再写死，环境变量优先；没设就用原来的 F:\hf_cache\whisper（本机行为不变）
+MODEL_DIR = os.environ.get("WHISPER_MODEL_DIR", r"F:\hf_cache\whisper")
 SR = 16000
 
 # MELD 的 CSV 里有 Windows-1252 残留字符（如 \x92 其实是撇号），不修会被算成错词

@@ -1,0 +1,61 @@
+{
+  "config": {
+    "modalities": [
+      "audio"
+    ],
+    "scale_fix": "text_ln",
+    "lr_text": 2e-05,
+    "lr_head": 0.001,
+    "freeze_text": false,
+    "epochs": 20,
+    "seed": 42
+  },
+  "model_kwargs": {
+    "text_norm": true
+  },
+  "best_epoch": 13,
+  "dev_acc": 0.472,
+  "dev_wf1": 0.4357,
+  "dev_mf1": 0.2758,
+  "dev_loss": 1.6244,
+  "per_class_f1": {
+    "anger": 0.4286,
+    "disgust": 0.0,
+    "fear": 0.0851,
+    "joy": 0.2452,
+    "neutral": 0.6446,
+    "sadness": 0.1948,
+    "surprise": 0.3321
+  },
+  "layer_weights": [
+    0.0575,
+    0.0329,
+    0.0371,
+    0.0507,
+    0.0359,
+    0.0676,
+    0.1529,
+    0.2117,
+    0.1996,
+    0.0513,
+    0.0319,
+    0.0352,
+    0.0357
+  ],
+  "n_dev": 1108,
+  "batch": 16,
+  "warmup": 0.1,
+  "audio_model": "facebook/wav2vec2-base",
+  "text_model": "roberta-base",
+  "labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "load_hint": "LateFusionClassifier(('audio',), **{'text_norm': True}).load_state_dict(torch.load('fusion_day13_audio_e20.pt'))",
+  "saved_at": "2026-10-04 12:31"
+}

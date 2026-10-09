@@ -1,0 +1,115 @@
+{
+  "audio_model": "facebook/wav2vec2-base",
+  "text_model": "roberta-base",
+  "batch": 16,
+  "seed": 42,
+  "lr_text": 2e-05,
+  "lr_head": 0.001,
+  "align": {
+    "train": {
+      "n_csv": 9989,
+      "n_audio": 9988,
+      "n": 9988,
+      "dropped": [
+        "dia125_utt3"
+      ],
+      "shared_audio": 41,
+      "shared_cross_split": 3,
+      "shared_label_conflict": 21,
+      "truncated": 7
+    },
+    "dev": {
+      "n_csv": 1109,
+      "n_audio": 1108,
+      "n": 1108,
+      "dropped": [
+        "dia110_utt7"
+      ],
+      "shared_audio": 2,
+      "shared_cross_split": 0,
+      "shared_label_conflict": 0,
+      "truncated": 2
+    },
+    "test": {
+      "n_csv": 2610,
+      "n_audio": 2610,
+      "n": 2610,
+      "dropped": [],
+      "shared_audio": 42,
+      "shared_cross_split": 3,
+      "shared_label_conflict": 28,
+      "truncated": 2
+    }
+  },
+  "dataset": {
+    "n": {
+      "train": 9988,
+      "dev": 1108,
+      "test": 2610
+    },
+    "train_batches": 625,
+    "first_len": 24
+  },
+  "forward": {
+    "logits": [
+      16,
+      7
+    ],
+    "text_norm": 11.64,
+    "audio_norm_before": 2.85,
+    "audio_norm_after": 27.7,
+    "head_params": 395271
+  },
+  "backward": {
+    "loss": 1.9733,
+    "grad_norms": {
+      "roberta_word_emb": 0.025844,
+      "layer_weights": 0.013434,
+      "audio_layernorm": 0.05146,
+      "head_in_text_cols": 1.944031,
+      "head_in_audio_cols": 3.355214,
+      "head_out": 1.737573
+    }
+  },
+  "text_baseline_dev1108": {
+    "source": "text_best.pt 重新推理",
+    "n": 1108,
+    "acc": 0.6164,
+    "wf1": 0.6065,
+    "mf1": 0.4563,
+    "per_class_f1": {
+      "anger": 0.4172,
+      "disgust": 0.1379,
+      "fear": 0.2745,
+      "joy": 0.5742,
+      "neutral": 0.7754,
+      "sadness": 0.3952,
+      "surprise": 0.6198
+    },
+    "full_1109": {
+      "acc": 0.6168,
+      "wf1": 0.6068,
+      "mf1": 0.4564
+    },
+    "no_shared_1106": {
+      "acc": 0.6157,
+      "wf1": 0.6058,
+      "mf1": 0.4556
+    },
+    "all_neutral": {
+      "acc": 0.4233,
+      "wf1": 0.2518,
+      "mf1": 0.085
+    }
+  },
+  "checks": {
+    "align": true,
+    "getitem": true,
+    "dataloader": true,
+    "forward": true,
+    "modalities": true,
+    "backward": true,
+    "baseline_reproduced": true
+  },
+  "gpu_peak_GB": 2.02
+}

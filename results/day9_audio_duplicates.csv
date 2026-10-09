@@ -1,0 +1,86 @@
+﻿h,split,key,Dialogue_ID,Utterance_ID,duration_s,emotion,Speaker,text
+099538e6fbca,train,dia376_utt1,376,1,1.2586875,joy,Phoebe,Hey!
+099538e6fbca,train,dia725_utt1,725,1,1.2586875,joy,Phoebe,Hey!
+12cb3b659bc3,dev,dia84_utt0,84,0,2.2613125,surprise,Monica,"Oh, did you catch him?!"
+12cb3b659bc3,dev,dia84_utt1,84,1,2.2613125,surprise,Ross,Wh-what did he say?!
+12d61a5f4419,test,dia95_utt10,95,10,3.0933125,neutral,Phoebe,No I'm not.
+12d61a5f4419,test,dia95_utt11,95,11,3.0933125,surprise,Phoebe,No!
+24e5a61b1181,train,dia312_utt8,312,8,4.4373126,surprise,Ross,"Noo, nnnnn. What does this mean? What do you, I mean do you wanna, get back together?"
+24e5a61b1181,train,dia698_utt4,698,4,4.4373126,neutral,Ross,"What does this mean? What do you, I mean do you wanna, get back together?"
+45ae9f0e06f0,train,dia376_utt0,376,0,0.896,joy,Joey,Hey Pheebs!
+45ae9f0e06f0,train,dia725_utt0,725,0,0.896,joy,Joey,Hey Pheebs!
+4a34b7668545,train,dia50_utt4,50,4,4.4373126,neutral,Joey,"Umm, all right Wayne, level with me."
+4a34b7668545,train,dia50_utt5,50,5,4.4373126,fear,Joey,I-I keep hearing all these rumors that I might get fired.
+52e858371439,test,dia47_utt8,47,8,1.472,neutral,Monica,Hi.
+52e858371439,test,dia47_utt9,47,9,1.472,neutral,Chandler,Hey!
+5de3f5bdf7f4,train,dia770_utt0,770,0,2.1333125,neutral,Chandler,Yeah.
+5de3f5bdf7f4,train,dia875_utt10,875,10,2.1333125,neutral,Monica,Chandler!
+5e43b61b4a98,test,dia72_utt0,72,0,3.52,neutral,Nurse,This room's available.
+5e43b61b4a98,test,dia72_utt1,72,1,3.52,joy,Rachel,Okay!
+5e43b61b4a98,test,dia72_utt2,72,2,3.52,anger,Rachel,Okay wait!
+5e43b61b4a98,test,dia72_utt3,72,3,3.52,anger,Rachel,You listen to me!
+5fdf7c018a44,train,dia312_utt3,312,3,4.0533123,neutral,Rachel,"Yeah, because I was"
+5fdf7c018a44,train,dia698_utt1,698,1,4.0533123,neutral,Rachel,"Yeah, because I was"
+613593887153,test,dia117_utt8,117,8,2.9226875,surprise,The Instructor,Who? Me the attacker?
+613593887153,train,dia887_utt0,887,0,2.9226875,neutral,Ross,Yes that's right.
+616adf3973e6,test,dia100_utt10,100,10,4.352,sadness,Phoebe,I broke it.
+616adf3973e6,test,dia100_utt11,100,11,4.352,neutral,Phoebe,All right.
+6cfbdb14a6b8,test,dia25_utt2,25,2,1.7706875,sadness,Monica,"Oh God, I'm so sorry."
+6cfbdb14a6b8,test,dia25_utt3,25,3,1.7706875,neutral,Rachel,I know.
+7aa70d34f54f,train,dia312_utt5,312,5,1.8346875,sadness,Rachel,Noo.
+7aa70d34f54f,train,dia698_utt3,698,3,1.8346875,disgust,Rachel,Noo.
+7fa2c293517b,test,dia85_utt0,85,0,2.7946875,neutral,Joey,"But um, I don't think it's anything serious."
+7fa2c293517b,train,dia12_utt7,12,7,2.7946875,neutral,Joey,"But um, I don't think it's anything serious."
+8025736e995d,test,dia78_utt6,78,6,1.8773125,neutral,Ross,Guess what?
+8025736e995d,test,dia78_utt7,78,7,1.8773125,joy,Ross,They published my paper.
+80b17d75eb29,test,dia85_utt1,85,1,3.008,surprise,Chandler,This sounds like a hernia. You have to-you-you-Go to the doctor!
+80b17d75eb29,train,dia12_utt8,12,8,3.008,surprise,Chandler,This sounds like a hernia. You have to-you-you go to the doctor!
+837c9a10ef4e,test,dia93_utt8,93,8,2.6453125,neutral,Joey,"Oh, Chandler, Wayne."
+837c9a10ef4e,test,dia93_utt9,93,9,2.6453125,neutral,Joey,"Wayne, Chandler."
+9537f5ba6ebc,train,dia926_utt8,926,8,3.264,neutral,Monica,"Y'know, the next time we see them we're just gonna tell them."
+9537f5ba6ebc,train,dia926_utt9,926,9,3.264,neutral,Monica,That's it.
+9e73193e5858,test,dia45_utt4,45,4,2.5173125,joy,Phoebe,Oh that's so exciting!
+9e73193e5858,test,dia45_utt5,45,5,2.5173125,joy,Phoebe,Thanks Mon!
+9eae02912ae5,test,dia72_utt6,72,6,5.3546877,anger,Rachel,I'm next!
+9eae02912ae5,test,dia72_utt7,72,7,5.3546877,anger,Rachel,It's my turn!
+a5f99ffe712e,train,dia657_utt7,657,7,2.6026876,joy,Megan,Oooh it's getting close!
+a5f99ffe712e,train,dia657_utt8,657,8,2.6026876,neutral,Megan,"So uh, who's your photographer?"
+aab892f3dbe1,test,dia14_utt0,14,0,2.7306876,surprise,Phoebe,Have you really done this before?
+aab892f3dbe1,test,dia14_utt1,14,1,2.7306876,joy,Joey,Yeah!
+aab892f3dbe1,test,dia14_utt2,14,2,2.7306876,joy,Joey,Yeah!
+adc8d4f8ed87,test,dia34_utt13,34,13,4.6293125,surprise,Monica,Y'know what? You are right?!
+adc8d4f8ed87,test,dia34_utt14,34,14,4.6293125,anger,Rachel,I mean sex does not have to be a big deal!
+afd8b2461a6c,train,dia312_utt14,312,14,5.7173123,neutral,Rachel,"I just, I feel, I-I just..."
+afd8b2461a6c,train,dia698_utt7,698,7,5.7173123,sadness,Rachel,"I just, I feel, I-I just..."
+b1390478664a,test,dia49_utt8,49,8,4.3093123,neutral,Chandler,"I know, me too."
+b1390478664a,test,dia49_utt9,49,9,4.3093123,joy,Chandler,Hey!
+b5a4c9bb9972,train,dia605_utt5,605,5,2.56,surprise,Julie,Really?
+b5a4c9bb9972,train,dia605_utt6,605,6,2.56,fear,Julie,You don't think they'll judge and ridicule me?
+b67f4b4ff631,train,dia585_utt7,585,7,1.6,surprise,Ross,"Wait, wait, wait, wait, wait."
+b67f4b4ff631,train,dia585_utt9,585,9,1.6,joy,Ross,"Wait, wait, wait."
+b9fd27f587da,test,dia184_utt1,184,1,3.968,surprise,Monica,What?! You're crazy! There's nothing sexual about the noises I make!
+b9fd27f587da,test,dia184_utt2,184,2,3.968,anger,Phoebe,There's nothing sexual about this?
+bc38c18aa223,train,dia312_utt2,312,2,2.048,anger,Ross,"Y'know, hey! You're the one who ended it, remember?"
+bc38c18aa223,train,dia698_utt0,698,0,2.048,anger,Ross,"Y'know, hey! You're the one who ended it, remember?"
+beafe611b969,train,dia312_utt4,312,4,1.024,sadness,Ross,You still love me?
+beafe611b969,train,dia698_utt2,698,2,1.024,anger,Ross,You still love me?
+c378cad86f87,train,dia851_utt16,851,16,3.1786876,neutral,Kristen,"Oh I, I have plans tonight."
+c378cad86f87,train,dia851_utt17,851,17,3.1786876,neutral,Kristen,But how about tomorrow?
+cbddcebcd6c5,train,dia353_utt0,353,0,5.9306874,neutral,Joey,Bijan for men? Bijan for men? Bijan for men?
+cbddcebcd6c5,train,dia662_utt0,662,0,5.9306874,neutral,Joey,Bijan for men?
+ddc9c5dd5e76,test,dia41_utt8,41,8,2.0053124,surprise,Phoebe,Oh no!
+ddc9c5dd5e76,test,dia41_utt9,41,9,2.0053124,surprise,Phoebe,Wait!
+e2dd62386dd2,test,dia100_utt5,100,5,4.224,sadness,Phoebe,"Okay, I'm sorry."
+e2dd62386dd2,test,dia100_utt6,100,6,4.224,sadness,Phoebe,I didn't mean to scare you.
+e2dd62386dd2,test,dia100_utt7,100,7,4.224,neutral,Phoebe,I just have to clean that up.
+ee1dd0f53e8e,train,dia312_utt13,312,13,1.1306875,sadness,Ross,What?!
+ee1dd0f53e8e,train,dia698_utt6,698,6,1.1306875,surprise,Ross,What?!
+ee21685feeb3,train,dia376_utt3,376,3,4.6293125,fear,Phoebe,Wow! Nice! Manly and also kind of a slut.
+ee21685feeb3,train,dia725_utt3,725,3,4.6293125,joy,Phoebe,Wow! Nice! Manly and also kind of a slut.
+fdf411cc55eb,test,dia100_utt16,100,16,3.5626874,neutral,Phoebe,"Well, you can't answer."
+fdf411cc55eb,test,dia100_utt17,100,17,3.5626874,neutral,Phoebe,Leslie?
+fdf4ec43a3bf,test,dia71_utt4,71,4,4.096,joy,The Casting Director,"Joey, this is the awkward part."
+fdf4ec43a3bf,test,dia71_utt5,71,5,4.096,surprise,Joey,Oh!
+fdf4ec43a3bf,test,dia71_utt6,71,6,4.096,surprise,Joey,Hey right!
+ffb108e99dd1,train,dia376_utt2,376,2,9.152,joy,Joey,Check it out. How much of a man am I?!
+ffb108e99dd1,train,dia725_utt2,725,2,9.152,joy,Joey,Check it out. How much of a man am I?!

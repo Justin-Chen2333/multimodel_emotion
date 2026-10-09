@@ -1,0 +1,44 @@
+{
+  "mm_s43": {
+    "dev_wf1": 0.6155,
+    "best_epoch": 3,
+    "logged_dev_wf1": 0.6155,
+    "logged_best_epoch": 3,
+    "minutes": 3.1
+  },
+  "mm_s44": {
+    "dev_wf1": 0.612,
+    "best_epoch": 2,
+    "logged_dev_wf1": 0.612,
+    "logged_best_epoch": 2,
+    "minutes": 2.9
+  },
+  "text_s43": {
+    "dev_wf1": 0.6009,
+    "best_epoch": 2,
+    "logged_dev_wf1": 0.6009,
+    "logged_best_epoch": 2,
+    "minutes": 2.0
+  },
+  "text_s44": {
+    "dev_wf1": 0.6039,
+    "best_epoch": 2,
+    "logged_dev_wf1": 0.6039,
+    "logged_best_epoch": 2,
+    "minutes": 2.0
+  },
+  "audio_s43": {
+    "dev_wf1": 0.4364,
+    "best_epoch": 14,
+    "logged_dev_wf1": 0.4364,
+    "logged_best_epoch": 14,
+    "minutes": 0.6
+  },
+  "audio_s44": {
+    "dev_wf1": 0.4336,
+    "best_epoch": 20,
+    "logged_dev_wf1": 0.4336,
+    "logged_best_epoch": 20,
+    "minutes": 0.6
+  }
+}

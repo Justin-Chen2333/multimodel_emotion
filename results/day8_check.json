@@ -1,0 +1,90 @@
+{
+  "model": "facebook/wav2vec2-base",
+  "device": "cuda",
+  "params_M": 94.4,
+  "n_hidden_states": 13,
+  "feat_extract_norm": "group",
+  "sample": "dia0_utt0.wav",
+  "sample_emotion": "neutral",
+  "sample_dur_s": 5.67,
+  "frames": 283,
+  "frames_per_s": 49.87,
+  "last_hidden_state": [
+    1,
+    283,
+    768
+  ],
+  "audio_embedding": [
+    1,
+    768
+  ],
+  "all_layers": [
+    1,
+    13,
+    768
+  ],
+  "infer_ms": 7.0,
+  "batch_consistency": {
+    "no_mask": {
+      "last_layer": [
+        0.98631,
+        1.0,
+        0.90796,
+        0.99312
+      ],
+      "min_all_layers": 0.85302
+    },
+    "with_mask": {
+      "last_layer": [
+        0.93944,
+        1.0,
+        0.6348,
+        0.99945
+      ],
+      "min_all_layers": 0.4246
+    }
+  },
+  "single_clip_ms_mean": 11.4,
+  "durations": {
+    "train": {
+      "n": 9989,
+      "missing": 1,
+      "pct": {
+        "50": 2.5,
+        "90": 6.4,
+        "95": 7.9,
+        "99": 11.8
+      },
+      "max": 41.0,
+      "over_10s": 212,
+      "over_20s": 7
+    },
+    "dev": {
+      "n": 1109,
+      "missing": 1,
+      "pct": {
+        "50": 2.4,
+        "90": 6.0,
+        "95": 7.6,
+        "99": 11.9
+      },
+      "max": 28.5,
+      "over_10s": 23,
+      "over_20s": 2
+    },
+    "test": {
+      "n": 2610,
+      "missing": 0,
+      "pct": {
+        "50": 2.6,
+        "90": 6.3,
+        "95": 7.8,
+        "99": 11.4
+      },
+      "max": 305.0,
+      "over_10s": 48,
+      "over_20s": 2
+    }
+  },
+  "estimate_full_extract_min": 2.6
+}

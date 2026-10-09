@@ -1,0 +1,47 @@
+{
+  "config": {
+    "modalities": [
+      "text"
+    ],
+    "scale_fix": "text_ln",
+    "lr_text": 2e-05,
+    "lr_head": 0.001,
+    "freeze_text": true,
+    "epochs": 5,
+    "seed": 42
+  },
+  "model_kwargs": {
+    "text_norm": true
+  },
+  "best_epoch": 4,
+  "dev_acc": 0.5939,
+  "dev_wf1": 0.5494,
+  "dev_mf1": 0.3518,
+  "dev_loss": 1.1883,
+  "per_class_f1": {
+    "anger": 0.378,
+    "disgust": 0.0,
+    "fear": 0.0,
+    "joy": 0.5593,
+    "neutral": 0.7548,
+    "sadness": 0.2517,
+    "surprise": 0.519
+  },
+  "layer_weights": [],
+  "n_dev": 1108,
+  "batch": 16,
+  "warmup": 0.1,
+  "audio_model": "facebook/wav2vec2-base",
+  "text_model": "roberta-base",
+  "labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "load_hint": "LateFusionClassifier(('text',), **{'text_norm': True}).load_state_dict(torch.load('fusion_day13_text_frozen.pt'))",
+  "saved_at": "2026-10-04 15:36"
+}
